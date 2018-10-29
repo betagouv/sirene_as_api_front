@@ -3,25 +3,30 @@
     <h4>Gestionnaires (Personnes physiques)</h4>
     <hr>
     <div v-for="manager in managersPhysical" :key=manager.id>
-      <h5>{{ manager.qualite }}</h5>
+      <h5>{{ manager.qualite | capitalize }}</h5>
       <panel-info-rncs :parent="manager" :elements=elementsToDisplay />
     </div>
+    <panel-no-results-rncs :ifNotPresent="managersPhysical" />
   </div>
 </template>
 
 <script>
 import PanelInfoRNCS from '@/components/templates/PanelInfoRNCS'
+import PanelNoResultsRNCS from '@/components/templates/PanelNoResultsRNCS'
+import Filters from '@/components/mixins/filters'
 
 export default {
   name: 'EtablissementRNCSGestionPhysique',
-  components: { 'PanelInfoRncs': PanelInfoRNCS },
+  components: {
+    'PanelInfoRncs': PanelInfoRNCS,
+    'PanelNoResultsRncs': PanelNoResultsRNCS
+  },
   data () {
     return {
       elementsToDisplay:
         {
           "Date de dernière modification": "date_derniere_modification",
           "Libellé de dernière modification": "libelle_derniere_modification",
-          "ID Représentant": "id_representant",
           "Adresse Ligne 1": "adresse_ligne_1",
           "Adresse Ligne 2": "adresse_ligne_2",
           "Adresse Ligne 3": "adresse_ligne_3",
@@ -51,8 +56,15 @@ export default {
     },
     managersPhysical () {
       return this.managers.filter(manager => (manager.type_representant == 'P.Physique'))
+    },
+    noManagersPhysical () {
+      if (this.managersPhysical && this.managersPhysical.length != 0) {
+        return false
+      }
+      return true
     }
-  }
+  },
+  mixins: [Filters]
 }
 </script>
 

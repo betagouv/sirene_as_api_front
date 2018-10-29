@@ -3,18 +3,24 @@
     <h4>Gestionnaires (Personnes morales)</h4>
     <hr>
     <div v-for="manager in managersLegal" :key=manager.id>
-      <h5>{{ manager.qualite }}</h5>
+      <h5>{{ manager.qualite | capitalize }}</h5>
       <panel-info-rncs :parent="manager" :elements=elementsToDisplay />
     </div>
+    <panel-no-results-rncs :ifNotPresent="managersLegal" />
   </div>
 </template>
 
 <script>
 import PanelInfoRNCS from '@/components/templates/PanelInfoRNCS'
+import PanelNoResultsRNCS from '@/components/templates/PanelNoResultsRNCS'
+import Filters from '@/components/mixins/filters'
 
 export default {
   name: 'EtablissementRNCSGestionMorale',
-  components: { 'PanelInfoRncs': PanelInfoRNCS },
+  components: {
+    'PanelInfoRncs': PanelInfoRNCS,
+    'PanelNoResultsRncs': PanelNoResultsRNCS
+  },
   data () {
     return {
       elementsToDisplay:
@@ -22,7 +28,6 @@ export default {
           "Denomination": "denomination",
           "Forme Juridique": "forme_juridique",
           "SIREN": "siren_pm",
-          "ID Représentant": "id_representant",
           "Date de dernière modification": "date_derniere_modification",
           "Libellé de dernière modification": "libelle_derniere_modification",
           "Adresse Ligne 1": "adresse_ligne_1",
@@ -57,7 +62,8 @@ export default {
     managersLegal () {
       return this.managers.filter(manager => (manager.type_representant == 'P. Morale'))
     }
-  }
+  },
+  mixins: [Filters]
 }
 </script>
 

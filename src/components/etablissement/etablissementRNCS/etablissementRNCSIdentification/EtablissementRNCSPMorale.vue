@@ -30,10 +30,7 @@ export default {
           "Economie Sociale Solidaire": "economie_sociale_solidaire",
           "Durée Personne Morale": "duree_pm",
           "Libellé Dernière Modification": "libelle_derniere_modification",
-          "Date Dernière Modification": "date_derniere_modification",
-          "Code Greffe": "code_greffe",
-          "Numéro Gestion": "numero_gestion",
-          "SIREN": "siren"
+          "Date Dernière Modification": "date_derniere_modification"
         }
     }
   },

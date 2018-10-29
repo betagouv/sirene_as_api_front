@@ -56,7 +56,6 @@
 
   .container {
     padding-top: 2em;
-    // padding-bottom: 2em;
   }
 
   .company-container {
@@ -67,13 +66,10 @@
 
   .company-container__header {
     margin-top: 20px;
-    padding-bottom: 0;
   }
 
-  @media (max-width: $tablet) {
-    .company-container {
-      flex-direction: column;
-    }
+  .company-container__header:first-child {
+    margin-bottom: 0;
   }
 
   @media (max-width: 749px) {

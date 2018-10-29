@@ -8,15 +8,17 @@
         <div class="company__item"><div class="company__item-key">Texte</div><div class="company__item-value">{{ observation.texte | ifExist }}</div></div>
       </div>
     </div>
+    <panel-no-results-rncs :ifNotPresent="RNCSObservations" />
   </div>
 </template>
 
 <script>
 import Filters from '@/components/mixins/filters'
-import Format from '@/components/mixins/formating'
+import PanelNoResultsRNCS from '@/components/templates/PanelNoResultsRNCS'
 
 export default {
   name: 'EtablissementRNCSObservations',
+  components: { 'PanelNoResultsRncs': PanelNoResultsRNCS },
   computed: {
     RNCSData () {
       return this.$store.getters.RNCSData
@@ -25,7 +27,7 @@ export default {
       return this.$store.getters.RNCSData.observations
     }
   },
-  mixins: [Filters, Format]
+  mixins: [Filters]
 }
 </script>
 

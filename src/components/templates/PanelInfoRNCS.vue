@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'PanelInfo',
+  name: 'PanelInfoRNCS',
   props: ['parent', 'elements']
 }
 </script>
