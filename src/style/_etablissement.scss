@@ -56,7 +56,6 @@
 
   .container {
     padding-top: 2em;
-    // padding-bottom: 2em;
   }
 
   .company-container {
@@ -68,12 +67,6 @@
   .company-container__header {
     margin-top: 20px;
     padding-bottom: 0;
-  }
-
-  @media (max-width: $tablet) {
-    .company-container {
-      flex-direction: column;
-    }
   }
 
   @media (max-width: 749px) {
@@ -88,6 +81,9 @@
   }
 
   @media (max-width: $tablet) {
+    .panel-header {
+      margin-bottom: 0;
+     }
     .company-container {
       flex-direction: column;
     }
@@ -96,8 +92,8 @@
       margin-right: 0;
       width: auto;
     }
-    .company__panel:first-child {
-      margin-bottom: 2em;
+    .company__panel:nth-child(2) {
+      margin-top: 2em;
     }
   }
 

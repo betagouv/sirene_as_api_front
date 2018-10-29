@@ -1,5 +1,5 @@
 <template>
-  <div class="company__panel panel">
+  <div class="company__panel panel panel-header">
     <h2>Base RNA</h2>
     <p>Information Disponible</p>
     <p>Dernière mise à jour : {{ lastUpdateRNA }}</p>
