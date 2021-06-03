@@ -1,5 +1,5 @@
-import VueRouter from 'vue-router'
-import Vue from 'vue'
+import VueRouter from "vue-router";
+import Vue from "vue";
 
 import store from "@/store";
 
@@ -11,7 +11,6 @@ import CodesNaf from "@/components/doc/sirene/CodesNaf";
 import DocumentationHome from "@/components/doc/Home";
 import DocumentationSirene from "@/components/doc/Sirene";
 import DocumentationRna from "@/components/doc/Rna";
-import DocumentationRncs from "@/components/doc/Rncs";
 import SearchResults from "@/components/pages/SearchResults";
 import SireneEtablissement from "@/components/pages/Sirene";
 import RNAEtablissement from "@/components/pages/Rna";
@@ -31,7 +30,10 @@ const router = new VueRouter({
       path: "/search",
       name: "search-results",
       component: SearchResults,
-      props: (route) => ({ fullText: route.query.fullText, page: parseInt(route.query.page) })
+      props: route => ({
+        fullText: route.query.fullText,
+        page: parseInt(route.query.page)
+      })
     },
     {
       path: "/sirene/:sirenOrSiret",
@@ -69,7 +71,10 @@ const router = new VueRouter({
     {
       path: "/api_doc/rncs",
       name: "api-doc-rncs",
-      component: DocumentationRncs
+      beforeEnter: () => {
+        // redirect
+        window.location.replace("https://api.gouv.fr/les-api/api-rncs");
+      }
     },
     {
       path: "/api-doc/codes_naf",
@@ -89,15 +94,18 @@ const router = new VueRouter({
 
     // Redirect to old routes
     {
-      path: '/etablissement/:etaId',
+      path: "/etablissement/:etaId",
       redirect: to => {
         // Since the legacy route is the same for SIRENE and RNA data look for the
         // resource id format and redirect to the valid SIRENE or RNA accordingly
         const param = to.params.etaId;
         if (param.match(/^\d+$/)) {
-          return { name: 'sirene-etablissement', params: { sirenOrSiret: param } }
+          return {
+            name: "sirene-etablissement",
+            params: { sirenOrSiret: param }
+          };
         } else {
-          return { name: 'rna-etablissement', params: { assoId: param } }
+          return { name: "rna-etablissement", params: { assoId: param } };
         }
       }
     },
@@ -113,7 +121,7 @@ const router = new VueRouter({
     if (savedPosition) {
       return savedPosition;
     } else {
-      return { x: 0, y: 0 }
+      return { x: 0, y: 0 };
     }
   }
 });

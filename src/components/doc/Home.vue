@@ -78,7 +78,7 @@
             de l’Artisanat. Les données sont mises à jour toutes les nuits.
           </p>
           <div class="cta">
-            <a class="button" href="https://api-rnm.artisanat.fr/"
+            <a class="button" href="https://api.gouv.fr/les-api/api_rnm"
               >Documentation API RNM</a
             >
           </div>
@@ -91,14 +91,13 @@
         <h2>L’API Registre National du Commerce et des Sociétés (RNCS)</h2>
         <div class="row">
           <p class="description">
-            <strong>⚠ En version alpha ⚠ </strong><br />
             Cette API contient les données IMR (Immatriculation, Modification,
             Radiation) du Registre National du Commerce et des Sociétés de
             l’INPI.
           </p>
           <div class="cta">
-            <router-link class="button" :to="{ name: 'api-doc-rncs' }"
-              >Documentation API RNCS</router-link
+            <a class="button" href="https://api.gouv.fr/les-api/api-rncs"
+              >Documentation API RNCS</a
             >
           </div>
         </div>
@@ -141,8 +140,8 @@
             </p>
             <h3>La mission Etalab</h3>
             <p>
-              Etalab coordonne la politique d’ouverture et de partage des données
-              publiques (“open data”).
+              Etalab coordonne la politique d’ouverture et de partage des
+              données publiques (“open data”).
               <br />
               <a href="https://www.etalab.gouv.fr/en/qui-sommes-nous"
                 >Plus d’informations.</a
@@ -167,9 +166,9 @@
           pour vous.
         </h3>
         <p>
-          Dans le respect du principe "Dites le nous une seule fois", la DINSIC a
-          mis en place l’API Entreprise, l’API qui aggrège les informations sur
-          les entreprises.<br />
+          Dans le respect du principe "Dites le nous une seule fois", la DINSIC
+          a mis en place l’API Entreprise, l’API qui aggrège les informations
+          sur les entreprises.<br />
           Obtenez les Greffes, Certificats, Liasses fiscales, Attestations
           sociales, et bien plus encore...<br />
         </p>
@@ -178,9 +177,7 @@
           donc reservées aux administrations ou entreprises justifiant d'une
           mission de service public.<br />
           Pour toutes questions :
-          <a href="maito:entreprise@data.gouv.fr"
-            >entreprise@data.gouv.fr</a
-          >
+          <a href="maito:entreprise@data.gouv.fr">entreprise@data.gouv.fr</a>
         </p>
         <a class="button" href="https://entreprise.api.gouv.fr/"
           >Demander un accès</a
