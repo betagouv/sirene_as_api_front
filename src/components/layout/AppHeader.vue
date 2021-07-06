@@ -1,13 +1,13 @@
 <template>
   <header class="navbar" role="navigation">
     <div class="navbar__container">
-      <a class="navbar__home" @click="goToHomepage">
+      <div class="navbar__home">
         <img
           class="navbar__logo"
           src="@/assets/img/entreprise.svg"
           alt="entreprise.data.gouv.fr"
         />
-      </a>
+      </div>
     </div>
   </header>
 </template>
