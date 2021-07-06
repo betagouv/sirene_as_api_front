@@ -5,7 +5,7 @@
         <div class="row">
           <div class="column">
             <h1>Documentation de l’API Sirene</h1>
-            <h2>Qu’est-ce que l’API Sirene ?</h2>
+            <h2>Qu’est-ce que l’API Sirene Données Ouvertes ?</h2>
             <p>
               Dans le cadre du Service Public de la Donnée, de nombreux jeux de
               données s’ouvrent au grand public.<br />

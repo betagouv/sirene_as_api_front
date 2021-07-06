@@ -6,6 +6,24 @@
       <documentation-sirene-search />
       <documentation-sirene-geo-search />
       <documentation-sirene-use-case />
+
+      <br/>
+      <form class="text-center">
+        <h4>Envie de garder contact ? Inscrivez-vous à notre mailing-List</h4>
+        <p>
+          Vos données sont traitées par Mailjet.<br />
+          Vos informations ne seront jamais utilisées à des fins commerciales.
+        </p>
+        <iframe
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+          src="https://app.mailjet.com/widget/iframe/zR1/ack"
+          width="340"
+          height="95"
+        ></iframe>
+      </form>
   </div>
 </template>
 
@@ -21,7 +39,7 @@ export default {
   name: "DocumentationSirene",
 
   metaInfo: {
-    title: "Documentation API Sirene"
+    title: "Documentation API Sirene Données Ouvertes"
   },
 
   components : {
