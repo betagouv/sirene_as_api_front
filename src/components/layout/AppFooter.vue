@@ -33,13 +33,6 @@
       </div>
       <ul class="footer__links">
         <li>
-          <h2 class="fit-mobile">
-            <a href="https://entreprise.data.gouv.fr/"
-              >entreprise.data.gouv.fr</a
-            >
-          </h2>
-        </li>
-        <li>
           <a
             href="https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/"
             >Données de référence</a
